@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://odoocdn.com/openerp_website/static/src/img/assets/png/odoo_logo.png" alt="Odoo Logo" width="250"/>
 
-  # Self Management Freelance - Odoo 18 Module
+  # Freelance Management- Odoo 18 Module
 
   **Sistem ERP Mini untuk Manajemen Klien, Proyek, dan Tagihan Freelancer**
 
