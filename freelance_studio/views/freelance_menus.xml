@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_freelance_crm_pipeline" model="ir.actions.act_window">
+        <field name="name">Pipeline Negosiasi</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'default_type': 'opportunity'}</field>
+    </record>
+
+    <record id="action_freelance_project_tasks" model="ir.actions.act_window">
+        <field name="name">Kanban To-Do List</field>
+        <field name="res_model">project.task</field>
+        <field name="view_mode">kanban,calendar,list,form</field>
+        <field name="context">{'search_default_my_tasks': 1}</field>
+    </record>
+    
+    <record id="action_freelance_analytics" model="ir.actions.act_window">
+        <field name="name">Analytics &amp; Performa</field>
+        <field name="res_model">crm.lead</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="domain">[('type', '=', 'opportunity')]</field>
+    </record>
+
+    <record id="project.open_view_project_all" model="ir.actions.act_window">
+        <field name="view_mode">kanban,calendar,list,form</field>
+    </record>
+
+    <!-- Root Menu -->
+    <menuitem id="menu_freelance_root"
+              name="Freelance Studio"
+              sequence="1"/>
+
+    <!-- 1. CRM & Leads -->
+    <menuitem id="menu_freelance_crm"
+              name="CRM &amp; Leads"
+              parent="menu_freelance_root"
+              action="action_freelance_crm_pipeline"
+              sequence="10"/>
+
+    <!-- 2. Sales & Kontrak -->
+    <menuitem id="menu_freelance_sales"
+              name="Sales &amp; Kontrak"
+              parent="menu_freelance_root"
+              action="sale.action_quotations"
+              sequence="20"/>
+
+    <!-- 3. Manajemen Project -->
+    <menuitem id="menu_freelance_project"
+              name="Manajemen Project"
+              parent="menu_freelance_root"
+              action="project.open_view_project_all"
+              sequence="30"/>
+              
+    <!-- Submenu for Tasks under Project -->
+    <menuitem id="menu_freelance_tasks"
+              name="To-Do List"
+              parent="menu_freelance_project"
+              action="action_freelance_project_tasks"
+              sequence="10"/>
+
+    <!-- 4. Keuangan & Invoice -->
+    <menuitem id="menu_freelance_accounting"
+              name="Keuangan &amp; Invoice"
+              parent="menu_freelance_root"
+              action="account.action_move_out_invoice_type"
+              sequence="40"/>
+
+    <!-- 5. Analytics & Performa -->
+    <menuitem id="menu_freelance_analytics"
+              name="Analytics &amp; Performa"
+              parent="menu_freelance_root"
+              action="action_freelance_analytics"
+              sequence="50"/>
+</odoo>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="edit_project_inherit_freelance" model="ir.ui.view">
+        <field name="name">project.project.form.inherit.freelance</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <group string="Freelance Details">
+                    <field name="project_type"/>
+                    <field name="website_name"/>
+                    <field name="schedule_date"/>
+                    <field name="override_limit" widget="boolean_toggle"/>
+                </group>
+            </xpath>
+            <xpath expr="//sheet" position="inside">
+                <notebook>
+                    <page name="financial" string="Keuangan &amp; Ekstra">
+                        <group>
+                            <field name="base_price" widget="monetary"/>
+                        </group>
+                    </page>
+                </notebook>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_project_kanban_inherit_freelance" model="ir.ui.view">
+        <field name="name">project.project.kanban.inherit.freelance</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <div class="o_kanban_record_body mt-2">
+                    <div class="mb-2">
+                        <field name="project_type" widget="badge" decoration-info="project_type == 'ui_ux'" decoration-success="project_type == 'web'" decoration-warning="project_type == 'logo'"/>
+                    </div>
+                    <div t-if="record.schedule_date.value">
+                        <i class="fa fa-calendar me-1" title="Deadline"/>
+                        <field name="schedule_date"/>
+                    </div>
+                    <div t-if="record.base_price.value" class="mt-1 font-weight-bold text-success">
+                        <field name="base_price" widget="monetary"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+        <record id="view_task_form_inherit_freelance_price" model="ir.ui.view">
+            <field name="name">project.task.form.inherit.freelance.price</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_ids']" position="after">
+                    <field name="final_price" widget="monetary"/>
+                    <field name="revision_note" invisible="final_price == 0"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_quotation_tree_inherit_freelance_status" model="ir.ui.view">
+            <field name="name">sale.order.tree.inherit.freelance.status</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="amount_paid_custom" widget="monetary" decoration-bf="1" optional="show"/>
+                    <field name="payment_status_custom" widget="badge" decoration-success="payment_status_custom == 'paid'" decoration-warning="payment_status_custom == 'partial'" decoration-danger="payment_status_custom == 'not_paid'" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="view_order_tree_inherit_freelance_status" model="ir.ui.view">
+            <field name="name">sale.order.tree.inherit.freelance.orders.status</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='amount_total']" position="after">
+                    <field name="amount_paid_custom" widget="monetary" decoration-bf="1" optional="show"/>
+                    <field name="payment_status_custom" widget="badge" decoration-success="payment_status_custom == 'paid'" decoration-warning="payment_status_custom == 'partial'" decoration-danger="payment_status_custom == 'not_paid'" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_freelance_invoice_kinetic" inherit_id="account.report_invoice_document" priority="999">
+            
+            <xpath expr="//t[@t-call='web.external_layout']" position="replace">
+                <t t-call="web.html_container">
+                    <t t-set="o" t-value="o.with_context(lang=lang)" />
+                    
+                    <div class="article" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                        
+                        <div class="d-none">
+                            <p name="payment_communication">
+                                <t t-if="o.partner_bank_id"/>
+                            </p>
+                            <p name="payment_term"/>
+                            <div name="comment"/>
+                        </div>
+
+                        <div class="page" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #333; padding: 40px;">
+                            
+                            <div class="row mb-5">
+                                <div class="col-6">
+                                    <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 80px; margin-bottom: 15px;" alt="Logo Perusahaan"/>
+                                    
+                                    <h1 style="font-weight: 800; color: #2d3436; font-size: 40px; margin-bottom: 0;">INVOICE</h1>
+                                    
+                                    <span style="font-size: 16px; color: #6c5ce7; font-weight: bold; letter-spacing: 1px; text-transform: uppercase;" t-field="o.company_id.name"/>
+                                    
+                                    <div t-if="o.payment_state in ('paid', 'in_payment')" style="position: absolute; top: 140px; left: 150px; border: 5px solid #d63031; color: #d63031; font-size: 38px; font-weight: bold; padding: 10px 30px; transform: rotate(-15deg); opacity: 0.7; z-index: 1000; letter-spacing: 3px; border-radius: 10px;">
+                                        LUNAS
+                                    </div>
+                                </div>
+                                
+                                <div class="col-6 text-right" style="text-align: right;">
+                                    <h4 t-field="o.partner_id.name" style="font-weight: bold; color: #2d3436;"/>
+                                    <div style="color: #636e72;">
+                                        <div t-field="o.partner_id.street"/>
+                                        <div t-if="o.partner_id.street2" t-field="o.partner_id.street2"/>
+                                        <div>
+                                            <span t-field="o.partner_id.city"/> <span t-field="o.partner_id.zip"/>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4" style="background-color: #f8f9fa; padding: 10px; border-radius: 5px; display: inline-block; text-align: left;">
+                                        <table style="font-size: 13px;">
+                                            <tr><td style="padding-right: 15px; color: #888;">Tanggal:</td> <td><strong><span t-field="o.invoice_date"/></strong></td></tr>
+                                            <tr><td style="padding-right: 15px; color: #888;">Jatuh Tempo:</td> <td style="color: #d63031;"><strong><span t-field="o.invoice_date_due"/></strong></td></tr>
+                                            <tr><td style="padding-right: 15px; color: #888;">No. Tagihan:</td> <td><strong><span t-field="o.name"/></strong></td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <table class="table table-borderless" style="width: 100%;">
+                                        <thead style="background-color: #f8f9fa; border-bottom: 2px solid #6c5ce7; color: #2d3436;">
+                                            <tr>
+                                                <th style="padding: 12px; font-weight: bold;">Deskripsi Layanan</th>
+                                                <th class="text-right" style="text-align: right; padding: 12px; font-weight: bold;">Qty</th>
+                                                <th class="text-right" style="text-align: right; padding: 12px; font-weight: bold;">Harga Satuan</th>
+                                                <th class="text-right" style="text-align: right; padding: 12px; font-weight: bold;">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr t-foreach="o.invoice_line_ids" t-as="line">
+                                                <td style="padding: 15px 12px; border-bottom: 1px solid #eee; color: #2d3436; font-weight: 500;">
+                                                    <span t-field="line.name"/>
+                                                </td>
+                                                <td class="text-right" style="text-align: right; padding: 15px 12px; border-bottom: 1px solid #eee;">
+                                                    <span t-field="line.quantity"/>
+                                                </td>
+                                                <td class="text-right" style="text-align: right; padding: 15px 12px; border-bottom: 1px solid #eee;">
+                                                    <span t-field="line.price_unit" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                                <td class="text-right" style="text-align: right; padding: 15px 12px; border-bottom: 1px solid #eee;">
+                                                    <span t-field="line.price_subtotal" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="row mt-4">
+                                <div class="col-6">
+                                    <p t-if="o.narration" class="text-muted" style="color: #636e72;">
+                                        <strong>Catatan:</strong><br/>
+                                        <span t-field="o.narration"/>
+                                    </p>
+                                </div>
+                                <div class="col-6 text-right" style="text-align: right;">
+                                    <table class="table table-sm table-borderless" style="width: auto; margin-left: auto;">
+                                        <tr>
+                                            <td style="padding-right: 15px;"><strong>Subtotal:</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_untaxed" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                        <tr t-if="o.amount_tax > 0">
+                                            <td style="padding-right: 15px;"><strong>Pajak:</strong></td>
+                                            <td class="text-right">
+                                                <span t-field="o.amount_tax" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                        <tr style="border-top: 2px solid #6c5ce7; font-size: 1.2em; color: #2d3436;">
+                                            <td style="padding-right: 15px;"><strong>TOTAL:</strong></td>
+                                            <td class="text-right">
+                                                <strong t-field="o.amount_total" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div id="qrcode"/>
+
+                            <div class="row mt-5 pt-4" style="border-top: 1px dashed #ccc; page-break-inside: avoid;">
+                                <div class="col-12 text-center" style="font-size: 13px; color: #636e72; line-height: 1.8;">
+                                    <strong style="color: #2d3436; font-size: 14px;">Sistem ERP ini dibuat oleh Kinetic's</strong><br/>
+                                    <span>Modern Business &amp; Management Solutions</span><br/><br/>
+                                    <span style="background-color: #6c5ce7; color: white; padding: 3px 8px; border-radius: 3px; font-weight: bold; margin-right: 10px;">@</span> <strong>awandarafi345@gmail.com</strong> | 
+                                    <span style="background-color: #00b894; color: white; padding: 3px 8px; border-radius: 3px; font-weight: bold; margin-left: 10px; margin-right: 10px;">WA</span> <strong>0895384226450</strong><br/>
+                                    <span style="font-size: 12px; margin-top: 10px; display: block;">🌐 <a href="https://kineticerp.odoo.com/" style="color: #6c5ce7; text-decoration: none; font-weight: bold;">https://kineticerp.odoo.com/</a></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </t>
+            </xpath>
+            
+        </template>
+    </data>
+</odoo>
