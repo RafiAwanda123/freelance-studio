@@ -15,7 +15,7 @@
 <br>
 
 ## Deskripsi Singkat
-**Self Management Freelance** adalah modul kustom Odoo 18 yang dirancang khusus untuk mempermudah operasional seorang freelancer. Modul ini mengotomatiskan alur kerja mulai dari masuknya klien di CRM, manajemen tugas di Project, hingga pembuatan tagihan dan kustomisasi cetak PDF Invoice yang terintegrasi penuh.
+**Freelance Management** adalah modul kustom Odoo 18 yang dirancang khusus untuk mempermudah operasional seorang freelancer. Modul ini mengotomatiskan alur kerja mulai dari masuknya klien di CRM, manajemen tugas di Project, hingga pembuatan tagihan dan kustomisasi cetak PDF Invoice yang terintegrasi penuh.
 
 Dibuat untuk memastikan tidak ada pekerjaan yang terlewat, tidak ada jadwal yang bentrok, dan tidak ada tagihan ganda, dengan alur kerja yang rapi dan profesional.
 
