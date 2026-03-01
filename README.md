@@ -25,32 +25,26 @@ Dibuat untuk memastikan tidak ada pekerjaan yang terlewat, tidak ada jadwal yang
 
 ### 1. Otomatisasi CRM ke Manajemen Proyek
 Setiap kali klien sepakat dan status penawaran di CRM diubah menjadi "Won", sistem akan secara otomatis membuatkan Proyek baru beserta Tugas (Task) di papan Kanban, sekaligus menyiapkan draf penawaran (Draft Quotation) di latar belakang.
-*Screenshot: Menampilkan status Lead di CRM yang sudah Won dan transisinya ke Project.*
 ![Otomatisasi CRM](tautan_screenshot_crm_won_disini.png)
 
 ### 2. Papan Kanban Kustom & Validasi Jadwal
 Papan proyek telah disesuaikan dengan alur kerja freelancer: *Tugas Baru, Sedang Dikerjakan, Selesai, Revisi, Selesai Revisi*. Modul ini juga dilengkapi fitur validasi jadwal yang membatasi maksimal 4 proyek per minggu untuk menjaga beban kerja tetap ideal.
-*Screenshot: Menampilkan papan Kanban tugas dan peringatan validasi maksimal 4 proyek.*
 ![Manajemen Proyek](tautan_screenshot_kanban_project_disini.png)
 
 ### 3. Penyesuaian Harga Dinamis (Fitur Revisi)
 Terkadang harga awal dapat berubah setelah proses revisi. Modul ini memungkinkan freelancer untuk memasukkan "Harga Akhir" dan "Keterangan Tambahan" langsung di dalam kartu Tugas sebelum diselesaikan. Sistem akan otomatis memperbarui harga pada tagihan akhir beserta keterangan revisinya.
-*Screenshot: Menampilkan form dalam Task yang berisi kolom Harga Akhir dan Keterangan Revisi.*
 ![Penyesuaian Harga](tautan_screenshot_form_task_harga_disini.png)
 
 ### 4. Otomatisasi Tagihan & Anti-Duplikasi
 Mencegah terjadinya pembuatan tagihan ganda. Saat tugas di papan Kanban digeser ke kolom "Selesai", sistem secara presisi akan mencari draf Quotation milik klien tersebut, mengonfirmasinya menjadi Sales Order, dan mencetak draf Invoice secara otomatis.
-*Screenshot: Menampilkan daftar Sales Order yang sudah otomatis terkonfirmasi dari Project.*
 ![Otomatisasi Sales Order](tautan_screenshot_sales_order_otomatis_disini.png)
 
 ### 5. Kustomisasi Desain PDF Invoice Elegan
 Mengganti desain standar bawaan Odoo dengan desain PDF Invoice yang lebih premium. Menampilkan logo perusahaan freelancer secara otomatis, tata letak yang bersih, stempel lunas otomatis, dan identitas "Kinetic's ERP" di bagian catatan kaki.
-*Screenshot: Menampilkan hasil cetak PDF Invoice kustom yang elegan.*
 ![Kustomisasi Invoice PDF](tautan_screenshot_pdf_invoice_disini.png)
 
 ### 6. Pemantauan Pembayaran Langsung
 Menambahkan kolom khusus "Sudah Dibayar" dan label "Status Lunas" (Lunas, Sebagian, Belum Bayar) langsung di halaman daftar Sales Order. Mempermudah pemantauan klien mana yang belum melunasi tagihannya tanpa harus membuka menu akuntansi.
-*Screenshot: Menampilkan List View Sales Order dengan kolom tambahan status pembayaran.*
 ![Status Pembayaran](tautan_screenshot_status_pembayaran_so_disini.png)
 
 ---
