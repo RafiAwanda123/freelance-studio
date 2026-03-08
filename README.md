@@ -25,29 +25,29 @@ Dibuat untuk memastikan tidak ada pekerjaan yang terlewat, tidak ada jadwal yang
 
 ### 1. Otomatisasi CRM ke Manajemen Proyek
 Setiap kali klien sepakat dan status penawaran di CRM diubah menjadi "Won", sistem akan secara otomatis membuatkan Proyek baru beserta Tugas (Task) di papan Kanban, sekaligus menyiapkan draf penawaran (Draft Quotation) di latar belakang.
-![Otomatisasi CRM](<img width="1365" height="625" alt="Screenshot from 2026-03-08 12-46-28" src="https://github.com/user-attachments/assets/9607dfd8-e096-470b-a271-a53d2a9fa4b2" />)
+<img width="1365" height="625" alt="Screenshot from 2026-03-08 12-46-28" src="https://github.com/user-attachments/assets/9607dfd8-e096-470b-a271-a53d2a9fa4b2" />
 
 ### 2. Papan Kanban Kustom & Validasi Jadwal
 Papan proyek telah disesuaikan dengan alur kerja freelancer: *Tugas Baru, Sedang Dikerjakan, Selesai, Revisi, Selesai Revisi*. Modul ini juga dilengkapi fitur validasi jadwal yang membatasi maksimal 4 proyek per minggu untuk menjaga beban kerja tetap ideal.
-![Manajemen Proyek](<img width="1365" height="625" alt="Screenshot from 2026-03-08 12-48-41" src="https://github.com/user-attachments/assets/f2c1ba00-80b8-4a6d-be38-250712847329" />)
+<img width="1365" height="625" alt="Screenshot from 2026-03-08 12-48-41" src="https://github.com/user-attachments/assets/f2c1ba00-80b8-4a6d-be38-250712847329" />
 
 ### 3. Penyesuaian Harga Dinamis (Fitur Revisi)
 Terkadang harga awal dapat berubah setelah proses revisi. Modul ini memungkinkan freelancer untuk memasukkan "Harga Akhir" dan "Keterangan Tambahan" langsung di dalam kartu Tugas sebelum diselesaikan. Sistem akan otomatis memperbarui harga pada tagihan akhir beserta keterangan revisinya.
-![Penyesuaian Harga](<img width="1365" height="619" alt="image" src="https://github.com/user-attachments/assets/163b8a1d-db93-4802-873b-c4874fb9b7d9" />)
+<img width="1365" height="619" alt="image" src="https://github.com/user-attachments/assets/163b8a1d-db93-4802-873b-c4874fb9b7d9" />
 
 ### 4. Otomatisasi Tagihan & Anti-Duplikasi
 Mencegah terjadinya pembuatan tagihan ganda. Saat tugas di papan Kanban digeser ke kolom "Selesai", sistem secara presisi akan mencari draf Quotation milik klien tersebut, mengonfirmasinya menjadi Sales Order, dan mencetak draf Invoice secara otomatis.
-![Otomatisasi Sales Order](<img width="1365" height="625" alt="Screenshot from 2026-03-08 12-48-35" src="https://github.com/user-attachments/assets/1025499f-59af-4b59-af86-cbf30e2b865b" />)
+<img width="1365" height="625" alt="Screenshot from 2026-03-08 12-48-35" src="https://github.com/user-attachments/assets/1025499f-59af-4b59-af86-cbf30e2b865b" />
 
 ### 5. Kustomisasi Desain PDF Invoice Elegan
 Mengganti desain standar bawaan Odoo dengan desain PDF Invoice yang lebih premium. Menampilkan logo perusahaan freelancer secara otomatis, tata letak yang bersih, stempel lunas otomatis, dan identitas "Kinetic's ERP" di bagian catatan kaki.
-![Kustomisasi Invoice PDF](<img width="1132" height="552" alt="image" src="https://github.com/user-attachments/assets/9ac865b6-b791-4dd7-8b95-92a7df240f52" />)
+<img width="1132" height="552" alt="image" src="https://github.com/user-attachments/assets/9ac865b6-b791-4dd7-8b95-92a7df240f52" />
 <img width="1194" height="618" alt="image" src="https://github.com/user-attachments/assets/839f5fd6-05e1-4b34-830e-592cd282d446" />
 
 
 ### 6. Pemantauan Pembayaran Langsung
 Menambahkan kolom khusus "Sudah Dibayar" dan label "Status Lunas" (Lunas, Sebagian, Belum Bayar) langsung di halaman daftar Sales Order. Mempermudah pemantauan klien mana yang belum melunasi tagihannya tanpa harus membuka menu akuntansi.
-![Status Pembayaran](<img width="1365" height="625" alt="Screenshot from 2026-03-08 12-51-31" src="https://github.com/user-attachments/assets/8f9e7ca6-27a2-4d90-adea-ad40510faa0b" />)
+<img width="1365" height="625" alt="Screenshot from 2026-03-08 12-51-31" src="https://github.com/user-attachments/assets/8f9e7ca6-27a2-4d90-adea-ad40510faa0b" />
 <img width="1365" height="625" alt="Screenshot from 2026-03-08 12-48-47" src="https://github.com/user-attachments/assets/2ce10c22-dc23-448f-b954-1c9f3e47fdfd" />
 
 
