@@ -55,15 +55,16 @@ Menambahkan kolom khusus "Sudah Dibayar" dan label "Status Lunas" (Lunas, Sebagi
 
 ## Panduan Instalasi
 
-1. Unduh (Download ZIP) atau lakukan *clone* pada repositori ini ke komputer Anda.
-2. Ekstrak file ZIP yang telah diunduh. Di dalamnya, Anda akan menemukan folder bernama `freelance_studio`.
-3. Salin (Copy) folder `freelance_studio` tersebut.
-4. Tempel (Paste) folder tersebut ke dalam direktori `addons` pada instalasi Odoo 18 Anda (contoh letak folder bawaan Windows: `C:\Program Files\Odoo 18.0\server\odoo\addons`).
-5. Buka program **Services** pada OS Anda, cari servis Odoo (misal: `odoo-server`), lalu lakukan **Restart**. Langkah ini wajib dilakukan untuk memuat file Python ke dalam sistem.
-6. Buka aplikasi Odoo melalui peramban (browser) dan aktifkan **Developer Mode**.
-7. Masuk ke menu **Apps** (Aplikasi), lalu klik **Update Apps List** (Perbarui Daftar Aplikasi) di bilah atas.
-8. Cari modul **Self Management Freelance** di kolom pencarian (hapus filter 'Apps' pada bar pencarian jika perlu).
-9. Klik **Install**.
+1. Install Odoo langsung download dengan versi 18.
+2. Unduh (Download ZIP) atau lakukan *clone* pada repositori ini ke komputer Anda.
+3. Ekstrak file ZIP yang telah diunduh. Di dalamnya, Anda akan menemukan folder bernama `freelance_studio`.
+4. Salin (Copy) folder `freelance_studio` tersebut.
+5. Tempel (Paste) folder tersebut ke dalam direktori `addons` pada instalasi Odoo 18 Anda (contoh letak folder bawaan Windows: `C:\Program Files\Odoo 18.0\server\odoo\addons`).
+6. Buka program **Services** pada OS Anda, cari servis Odoo (misal: `odoo-server`), lalu lakukan **Restart**. Langkah ini wajib dilakukan untuk memuat file Python ke dalam sistem.
+7. Buka aplikasi Odoo melalui peramban (browser) dan aktifkan **Developer Mode**.
+8. Masuk ke menu **Apps** (Aplikasi), lalu klik **Update Apps List** (Perbarui Daftar Aplikasi) di bilah atas.
+9. Cari modul **Self Management Freelance** di kolom pencarian (hapus filter 'Apps' pada bar pencarian jika perlu).
+10. Klik **Install**.
 
 ---
 
